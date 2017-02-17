@@ -1,5 +1,7 @@
 module Ares
 
+open Influence
+
 [<EntryPoint>]
 let main argv =
     printfn "%A" argv

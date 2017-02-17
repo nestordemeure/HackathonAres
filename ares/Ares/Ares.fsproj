@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>47dd7b54-8bc3-4378-885d-862b30999369</ProjectGuid>
+    <ProjectGuid>68db2083-f532-4695-ac5f-776b88841683</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Ares</RootNamespace>
     <AssemblyName>Ares</AssemblyName>
@@ -43,6 +43,9 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+    <Reference Include="Influence">
+          <HintPath>..\..\Influence.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ares.fs" />
