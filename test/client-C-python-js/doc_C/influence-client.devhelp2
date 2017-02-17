@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<book xmlns="http://www.devhelp.net/book" title="Influence Client Reference Manual" link="index.html" author="" name="influence-client" version="2" language="c">
+  <chapters>
+    <sub name="Documentation des classes" link="ch01.html">
+      <sub name="InflCell" link="InflCell.html"/>
+      <sub name="InflClient" link="InflClient.html"/>
+      <sub name="InflField" link="InflField.html"/>
+    </sub>
+    <sub name="Object Hierarchy" link="object-tree.html"/>
+    <sub name="API Index" link="api-index-full.html"/>
+    <sub name="Index of deprecated API" link="deprecated-api-index.html"/>
+    <sub name="Annotation Glossary" link="annotation-glossary.html"/>
+  </chapters>
+  <functions>
+    <keyword type="function" name="infl_cell_new ()" link="InflCell.html#infl-cell-new"/>
+    <keyword type="function" name="infl_cell_get_x ()" link="InflCell.html#infl-cell-get-x"/>
+    <keyword type="function" name="infl_cell_get_y ()" link="InflCell.html#infl-cell-get-y"/>
+    <keyword type="function" name="infl_cell_get_owner ()" link="InflCell.html#infl-cell-get-owner"/>
+    <keyword type="function" name="infl_cell_get_unit_count ()" link="InflCell.html#infl-cell-get-unit-count"/>
+    <keyword type="function" name="infl_cell_set_owner ()" link="InflCell.html#infl-cell-set-owner"/>
+    <keyword type="function" name="infl_cell_set_unit_count ()" link="InflCell.html#infl-cell-set-unit-count"/>
+    <keyword type="macro" name="INFL_TYPE_CELL" link="InflCell.html#INFL-TYPE-CELL:CAPS"/>
+    <keyword type="struct" name="InflCell" link="InflCell.html#InflCell-struct"/>
+    <keyword type="property" name="The “owner” property" link="InflCell.html#InflCell--owner"/>
+    <keyword type="property" name="The “unit-count” property" link="InflCell.html#InflCell--unit-count"/>
+    <keyword type="property" name="The “x” property" link="InflCell.html#InflCell--x"/>
+    <keyword type="property" name="The “y” property" link="InflCell.html#InflCell--y"/>
+    <keyword type="function" name="infl_client_new ()" link="InflClient.html#infl-client-new"/>
+    <keyword type="function" name="infl_client_connect ()" link="InflClient.html#infl-client-connect"/>
+    <keyword type="function" name="infl_client_get_status ()" link="InflClient.html#infl-client-get-status"/>
+    <keyword type="function" name="infl_client_attack ()" link="InflClient.html#infl-client-attack"/>
+    <keyword type="function" name="infl_client_end_attacks ()" link="InflClient.html#infl-client-end-attacks"/>
+    <keyword type="function" name="infl_client_add_units ()" link="InflClient.html#infl-client-add-units"/>
+    <keyword type="function" name="infl_client_add_unit_list ()" link="InflClient.html#infl-client-add-unit-list"/>
+    <keyword type="function" name="infl_client_get_remaining_units ()" link="InflClient.html#infl-client-get-remaining-units"/>
+    <keyword type="function" name="infl_client_end_adding_units ()" link="InflClient.html#infl-client-end-adding-units"/>
+    <keyword type="function" name="infl_client_get_map ()" link="InflClient.html#infl-client-get-map"/>
+    <keyword type="function" name="infl_client_next_round ()" link="InflClient.html#infl-client-next-round"/>
+    <keyword type="function" name="infl_client_get_my_cells_arr ()" link="InflClient.html#infl-client-get-my-cells-arr"/>
+    <keyword type="function" name="infl_client_get_my_cells ()" link="InflClient.html#infl-client-get-my-cells"/>
+    <keyword type="function" name="infl_client_get_number ()" link="InflClient.html#infl-client-get-number"/>
+    <keyword type="enum" name="enum InflClientStatus" link="InflClient.html#InflClientStatus"/>
+    <keyword type="macro" name="INFL_TYPE_CLIENT" link="InflClient.html#INFL-TYPE-CLIENT:CAPS"/>
+    <keyword type="struct" name="InflClient" link="InflClient.html#InflClient-struct"/>
+    <keyword type="property" name="The “field” property" link="InflClient.html#InflClient--field"/>
+    <keyword type="property" name="The “number” property" link="InflClient.html#InflClient--number"/>
+    <keyword type="property" name="The “status” property" link="InflClient.html#InflClient--status"/>
+    <keyword type="function" name="infl_field_new ()" link="InflField.html#infl-field-new"/>
+    <keyword type="function" name="infl_field_get_cell ()" link="InflField.html#infl-field-get-cell"/>
+    <keyword type="function" name="infl_field_get_player_cells ()" link="InflField.html#infl-field-get-player-cells"/>
+    <keyword type="function" name="infl_field_get_width ()" link="InflField.html#infl-field-get-width"/>
+    <keyword type="function" name="infl_field_get_height ()" link="InflField.html#infl-field-get-height"/>
+    <keyword type="function" name="infl_field_get_size ()" link="InflField.html#infl-field-get-size"/>
+    <keyword type="function" name="infl_field_display ()" link="InflField.html#infl-field-display"/>
+    <keyword type="macro" name="INFL_TYPE_FIELD" link="InflField.html#INFL-TYPE-FIELD:CAPS"/>
+    <keyword type="struct" name="InflField" link="InflField.html#InflField-struct"/>
+    <keyword type="property" name="The “cells” property" link="InflField.html#InflField--cells"/>
+    <keyword type="property" name="The “height” property" link="InflField.html#InflField--height"/>
+    <keyword type="property" name="The “width” property" link="InflField.html#InflField--width"/>
+    <keyword type="constant" name="INFL_CLIENT_CONNECTION_LOST" link="InflClient.html#INFL-CLIENT-CONNECTION-LOST:CAPS"/>
+    <keyword type="constant" name="INFL_CLIENT_ONGOING" link="InflClient.html#INFL-CLIENT-ONGOING:CAPS"/>
+    <keyword type="constant" name="INFL_CLIENT_VICTORY" link="InflClient.html#INFL-CLIENT-VICTORY:CAPS"/>
+    <keyword type="constant" name="INFL_CLIENT_DEFEAT" link="InflClient.html#INFL-CLIENT-DEFEAT:CAPS"/>
+  </functions>
+</book>

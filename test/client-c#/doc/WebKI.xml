@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="AddUnits m&#233;thode" Url="html/de76dcc0-9f1e-9abf-5336-3a7889c56f6d.htm" />
+  <HelpKINode Title="AddUnitsList m&#233;thode" Url="html/b9bfe138-582d-205a-ae9c-2df46733b640.htm" />
+  <HelpKINode Title="Attack m&#233;thode" Url="html/5b977a81-da3d-154c-2ae8-4bca50053b62.htm" />
+  <HelpKINode Title="Connect m&#233;thode" Url="html/a9b7e02d-3b10-e0fe-24cb-7381f7b335be.htm" />
+  <HelpKINode Title="CONNECTION_LOST &#233;numeration de membre" Url="html/236e34a3-f281-8612-2c84-1037a03e9f1e.htm" />
+  <HelpKINode Title="DEFEAT &#233;numeration de membre" Url="html/236e34a3-f281-8612-2c84-1037a03e9f1e.htm" />
+  <HelpKINode Title="EndAddingUnits m&#233;thode" Url="html/6fa2a010-93e7-3ddd-4119-572a98bc36ef.htm" />
+  <HelpKINode Title="EndAttacks m&#233;thode" Url="html/7b616310-9a9a-65c8-7e5f-284a65ee0855.htm" />
+  <HelpKINode Title="GetCell m&#233;thode" Url="html/ccce429a-3351-c57b-1873-3cd354f4fb35.htm" />
+  <HelpKINode Title="GetCells m&#233;thode" Url="html/f3ea1b6c-b4da-3741-56eb-8afde70091ce.htm" />
+  <HelpKINode Title="GetHeight m&#233;thode" Url="html/1ec4a8e6-7bec-8e32-9b79-d6ed07c1f6af.htm" />
+  <HelpKINode Title="GetInstance m&#233;thode" Url="html/d7871f06-0f34-7410-e02f-ba425457f9dc.htm" />
+  <HelpKINode Title="GetMyCells m&#233;thode" Url="html/6a0b65cd-2b46-a6fc-a50b-d1473dddb432.htm" />
+  <HelpKINode Title="GetNumber m&#233;thode" Url="html/ec40448c-15a6-318f-01a9-5d98a8665757.htm" />
+  <HelpKINode Title="GetOwner m&#233;thode" Url="html/4ccfd186-b19b-c2a6-dee3-69d3a6910054.htm" />
+  <HelpKINode Title="GetStatus m&#233;thode" Url="html/41de0fdd-1f96-54e2-4a63-83067cd74e84.htm" />
+  <HelpKINode Title="GetUnitsCount m&#233;thode" Url="html/4ffbf1ae-2096-c6e9-f1a7-ee9c73b88629.htm" />
+  <HelpKINode Title="GetWidth m&#233;thode" Url="html/726bdbc2-6bcd-7042-2180-1cfe7c35a98a.htm" />
+  <HelpKINode Title="GetX m&#233;thode" Url="html/f418e9d5-1fe0-7475-af96-c20b2223381d.htm" />
+  <HelpKINode Title="GetY m&#233;thode" Url="html/502b0118-fe81-4094-f30f-f739bfedb892.htm" />
+  <HelpKINode Title="Influence espace de nom" Url="html/fdaf8bd1-4acb-7608-3285-2de0d965fee2.htm" />
+  <HelpKINode Title="Influence.InfluenceCell classe" Url="html/78178a2b-f067-3602-3798-ed86c278ce1d.htm" />
+  <HelpKINode Title="Influence.InfluenceClient classe" Url="html/69a00d13-4c8f-6f66-9510-1ee041d0868b.htm" />
+  <HelpKINode Title="Influence.InfluenceClient.Status &#233;numeration" Url="html/236e34a3-f281-8612-2c84-1037a03e9f1e.htm" />
+  <HelpKINode Title="Influence.InfluenceField classe" Url="html/3e74154a-4e3e-1c58-eb35-d8b67d369ea8.htm" />
+  <HelpKINode Title="InfluenceCell classe">
+    <HelpKINode Title="InfluenceCell Classe" Url="html/78178a2b-f067-3602-3798-ed86c278ce1d.htm" />
+    <HelpKINode Title="constructeur" Url="html/6216c7b4-c631-c7f5-bade-a96a4f97ad07.htm" />
+    <HelpKINode Title="m&#233;thodes" Url="html/c078a7a3-beba-2c7f-f145-7383ab342c3f.htm" />
+    <HelpKINode Title="&#224; propos InfluenceCell classe" Url="html/78178a2b-f067-3602-3798-ed86c278ce1d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InfluenceCell.GetOwner m&#233;thode" Url="html/4ccfd186-b19b-c2a6-dee3-69d3a6910054.htm" />
+  <HelpKINode Title="InfluenceCell.GetUnitsCount m&#233;thode" Url="html/4ffbf1ae-2096-c6e9-f1a7-ee9c73b88629.htm" />
+  <HelpKINode Title="InfluenceCell.GetX m&#233;thode" Url="html/f418e9d5-1fe0-7475-af96-c20b2223381d.htm" />
+  <HelpKINode Title="InfluenceCell.GetY m&#233;thode" Url="html/502b0118-fe81-4094-f30f-f739bfedb892.htm" />
+  <HelpKINode Title="InfluenceCell.InfluenceCell constructeur" Url="html/6216c7b4-c631-c7f5-bade-a96a4f97ad07.htm" />
+  <HelpKINode Title="InfluenceClient classe">
+    <HelpKINode Title="InfluenceClient Classe" Url="html/69a00d13-4c8f-6f66-9510-1ee041d0868b.htm" />
+    <HelpKINode Title="m&#233;thodes" Url="html/2e950362-056f-c509-79bc-ca6f8abfa07d.htm" />
+    <HelpKINode Title="&#224; propos InfluenceClient classe" Url="html/69a00d13-4c8f-6f66-9510-1ee041d0868b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InfluenceClient.AddUnits m&#233;thode" Url="html/de76dcc0-9f1e-9abf-5336-3a7889c56f6d.htm" />
+  <HelpKINode Title="InfluenceClient.AddUnitsList m&#233;thode" Url="html/b9bfe138-582d-205a-ae9c-2df46733b640.htm" />
+  <HelpKINode Title="InfluenceClient.Attack m&#233;thode" Url="html/5b977a81-da3d-154c-2ae8-4bca50053b62.htm" />
+  <HelpKINode Title="InfluenceClient.Connect m&#233;thode" Url="html/a9b7e02d-3b10-e0fe-24cb-7381f7b335be.htm" />
+  <HelpKINode Title="InfluenceClient.EndAddingUnits m&#233;thode" Url="html/6fa2a010-93e7-3ddd-4119-572a98bc36ef.htm" />
+  <HelpKINode Title="InfluenceClient.EndAttacks m&#233;thode" Url="html/7b616310-9a9a-65c8-7e5f-284a65ee0855.htm" />
+  <HelpKINode Title="InfluenceClient.GetInstance m&#233;thode" Url="html/d7871f06-0f34-7410-e02f-ba425457f9dc.htm" />
+  <HelpKINode Title="InfluenceClient.GetMyCells m&#233;thode" Url="html/6a0b65cd-2b46-a6fc-a50b-d1473dddb432.htm" />
+  <HelpKINode Title="InfluenceClient.GetNumber m&#233;thode" Url="html/ec40448c-15a6-318f-01a9-5d98a8665757.htm" />
+  <HelpKINode Title="InfluenceClient.GetStatus m&#233;thode" Url="html/41de0fdd-1f96-54e2-4a63-83067cd74e84.htm" />
+  <HelpKINode Title="InfluenceClient.NextRound m&#233;thode" Url="html/fe70382f-b2e3-a2b2-8a47-bd95501817ac.htm" />
+  <HelpKINode Title="InfluenceClient.RemainingUnits m&#233;thode" Url="html/25841549-1190-9998-6551-c3c40abdfa47.htm" />
+  <HelpKINode Title="InfluenceClient.Status &#233;numeration" Url="html/236e34a3-f281-8612-2c84-1037a03e9f1e.htm" />
+  <HelpKINode Title="InfluenceField classe">
+    <HelpKINode Title="InfluenceField Classe" Url="html/3e74154a-4e3e-1c58-eb35-d8b67d369ea8.htm" />
+    <HelpKINode Title="constructeur" Url="html/964ce189-a141-6ae6-8cac-bdab8aefd803.htm" />
+    <HelpKINode Title="m&#233;thodes" Url="html/769baf9e-4129-afe3-a7e1-ccfe9fcd1914.htm" />
+    <HelpKINode Title="&#224; propos InfluenceField classe" Url="html/3e74154a-4e3e-1c58-eb35-d8b67d369ea8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InfluenceField.GetCell m&#233;thode" Url="html/ccce429a-3351-c57b-1873-3cd354f4fb35.htm" />
+  <HelpKINode Title="InfluenceField.GetCells m&#233;thode" Url="html/f3ea1b6c-b4da-3741-56eb-8afde70091ce.htm" />
+  <HelpKINode Title="InfluenceField.GetHeight m&#233;thode" Url="html/1ec4a8e6-7bec-8e32-9b79-d6ed07c1f6af.htm" />
+  <HelpKINode Title="InfluenceField.GetWidth m&#233;thode" Url="html/726bdbc2-6bcd-7042-2180-1cfe7c35a98a.htm" />
+  <HelpKINode Title="InfluenceField.InfluenceField constructeur" Url="html/964ce189-a141-6ae6-8cac-bdab8aefd803.htm" />
+  <HelpKINode Title="NextRound m&#233;thode" Url="html/fe70382f-b2e3-a2b2-8a47-bd95501817ac.htm" />
+  <HelpKINode Title="ONGOING &#233;numeration de membre" Url="html/236e34a3-f281-8612-2c84-1037a03e9f1e.htm" />
+  <HelpKINode Title="RemainingUnits m&#233;thode" Url="html/25841549-1190-9998-6551-c3c40abdfa47.htm" />
+  <HelpKINode Title="VICTORY &#233;numeration de membre" Url="html/236e34a3-f281-8612-2c84-1037a03e9f1e.htm" />
+</HelpKI>

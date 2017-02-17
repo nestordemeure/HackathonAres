@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="754b4667-4042-4522-ac92-25aa3f5d1609" Title="Influence" Url="html/fdaf8bd1-4acb-7608-3285-2de0d965fee2.htm">
+    <HelpTOCNode Id="c847394e-5ec9-49fc-9aad-585666779cc0" Title="InfluenceCell Classe" Url="html/78178a2b-f067-3602-3798-ed86c278ce1d.htm">
+      <HelpTOCNode Title="InfluenceCell Constructeur " Url="html/6216c7b4-c631-c7f5-bade-a96a4f97ad07.htm" />
+      <HelpTOCNode Id="4da5d369-5b72-4b5a-8071-57da1c21ce18" Title="InfluenceCell M&#233;thodes" Url="html/c078a7a3-beba-2c7f-f145-7383ab342c3f.htm">
+        <HelpTOCNode Title="GetOwner M&#233;thode " Url="html/4ccfd186-b19b-c2a6-dee3-69d3a6910054.htm" />
+        <HelpTOCNode Title="GetUnitsCount M&#233;thode " Url="html/4ffbf1ae-2096-c6e9-f1a7-ee9c73b88629.htm" />
+        <HelpTOCNode Title="GetX M&#233;thode " Url="html/f418e9d5-1fe0-7475-af96-c20b2223381d.htm" />
+        <HelpTOCNode Title="GetY M&#233;thode " Url="html/502b0118-fe81-4094-f30f-f739bfedb892.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f84fcb64-83f8-4407-8019-61b9450c74de" Title="InfluenceClient Classe" Url="html/69a00d13-4c8f-6f66-9510-1ee041d0868b.htm">
+      <HelpTOCNode Id="7aa579c4-d346-4e37-acc0-1ab64bbcbb4f" Title="InfluenceClient M&#233;thodes" Url="html/2e950362-056f-c509-79bc-ca6f8abfa07d.htm">
+        <HelpTOCNode Title="AddUnits M&#233;thode " Url="html/de76dcc0-9f1e-9abf-5336-3a7889c56f6d.htm" />
+        <HelpTOCNode Title="AddUnitsList M&#233;thode " Url="html/b9bfe138-582d-205a-ae9c-2df46733b640.htm" />
+        <HelpTOCNode Title="Attack M&#233;thode " Url="html/5b977a81-da3d-154c-2ae8-4bca50053b62.htm" />
+        <HelpTOCNode Title="Connect M&#233;thode " Url="html/a9b7e02d-3b10-e0fe-24cb-7381f7b335be.htm" />
+        <HelpTOCNode Title="EndAddingUnits M&#233;thode " Url="html/6fa2a010-93e7-3ddd-4119-572a98bc36ef.htm" />
+        <HelpTOCNode Title="EndAttacks M&#233;thode " Url="html/7b616310-9a9a-65c8-7e5f-284a65ee0855.htm" />
+        <HelpTOCNode Title="GetInstance M&#233;thode " Url="html/d7871f06-0f34-7410-e02f-ba425457f9dc.htm" />
+        <HelpTOCNode Title="GetMyCells M&#233;thode " Url="html/6a0b65cd-2b46-a6fc-a50b-d1473dddb432.htm" />
+        <HelpTOCNode Title="GetNumber M&#233;thode " Url="html/ec40448c-15a6-318f-01a9-5d98a8665757.htm" />
+        <HelpTOCNode Title="GetStatus M&#233;thode " Url="html/41de0fdd-1f96-54e2-4a63-83067cd74e84.htm" />
+        <HelpTOCNode Title="NextRound M&#233;thode " Url="html/fe70382f-b2e3-a2b2-8a47-bd95501817ac.htm" />
+        <HelpTOCNode Title="RemainingUnits M&#233;thode " Url="html/25841549-1190-9998-6551-c3c40abdfa47.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="InfluenceClient.Status &#201;numeration" Url="html/236e34a3-f281-8612-2c84-1037a03e9f1e.htm" />
+    <HelpTOCNode Id="07bf1eb6-18a9-4988-b8a0-55d2796ee1a4" Title="InfluenceField Classe" Url="html/3e74154a-4e3e-1c58-eb35-d8b67d369ea8.htm">
+      <HelpTOCNode Title="InfluenceField Constructeur " Url="html/964ce189-a141-6ae6-8cac-bdab8aefd803.htm" />
+      <HelpTOCNode Id="58dad496-3ab3-41d0-a04b-63250f4a120f" Title="InfluenceField M&#233;thodes" Url="html/769baf9e-4129-afe3-a7e1-ccfe9fcd1914.htm">
+        <HelpTOCNode Title="GetCell M&#233;thode " Url="html/ccce429a-3351-c57b-1873-3cd354f4fb35.htm" />
+        <HelpTOCNode Title="GetCells M&#233;thode " Url="html/f3ea1b6c-b4da-3741-56eb-8afde70091ce.htm" />
+        <HelpTOCNode Title="GetHeight M&#233;thode " Url="html/1ec4a8e6-7bec-8e32-9b79-d6ed07c1f6af.htm" />
+        <HelpTOCNode Title="GetWidth M&#233;thode " Url="html/726bdbc2-6bcd-7042-2180-1cfe7c35a98a.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>
