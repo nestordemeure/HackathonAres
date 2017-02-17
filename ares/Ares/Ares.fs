@@ -1,13 +1,14 @@
 module Ares
 
 open System
-open Influence 
+open Influence
 
 [<EntryPoint>]
 let main argv =
    let r = new System.Random()
    let client = InfluenceClient.GetInstance()
-   client.Connect("127.0.0.1", "les DauF#ins Surfeurs");
+   //client.Connect("127.0.0.1", "les DauF#ins Surfeurs")
+   client.Connect("10.3.4.37", "les DauF#ins Surfeurs");
    let mutable field = client.NextRound()
    let mutable myCells = client.GetMyCells()
 
@@ -29,7 +30,7 @@ let main argv =
       for i = 0 to unitsToAdd do
          let c = myCells.[r.Next(myCells.Count)]
          client.AddUnits(c, 1)
-         client.EndAddingUnits()
+         field <- client.EndAddingUnits()
 
       match client.GetStatus() with 
       | InfluenceClient.Status.VICTORY -> printfn "YOU WON!"
