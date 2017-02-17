@@ -45,6 +45,7 @@
     <Reference Include="System.Numerics" />
     <Reference Include="Influence">
           <HintPath>..\..\Influence.dll</HintPath>
+          <DocumentationFile>..\..\influence.xml</DocumentationFile>
     </Reference>
   </ItemGroup>
   <ItemGroup>

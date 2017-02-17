@@ -1,0 +1,294 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Influence</name>
+    </assembly>
+    <members>
+        <member name="T:Influence.InfluenceCell">
+             <summary>
+             Classe représentant une cellule du jeu
+             </summary>
+            </member>
+        <member name="F:Influence.InfluenceCell.x">
+             <summary>
+             Coordonnée x de la cellule (colonne de la cellule, commence à 0)
+             </summary>
+            </member>
+        <member name="F:Influence.InfluenceCell.y">
+             <summary>
+             Coordonnée y de la cellule (ligne de la cellule, commence à 0)
+             </summary>
+            </member>
+        <member name="F:Influence.InfluenceCell.owner">
+             <summary>
+             Numéro du joueur à qui appartient la cellule (0 si elle est vide)
+             </summary>
+            </member>
+        <member name="F:Influence.InfluenceCell.unitsCount">
+             <summary>
+             Nombre de soldats présents sur la cellule
+             </summary>
+            </member>
+        <member name="M:Influence.InfluenceCell.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+             <summary>
+             Constructeur d'une cellule du jeu
+             </summary>
+             <param name="x">Coordonnée x de la cellule (colonne de la cellule)</param>
+             <param name="y">Coordonnée y de la cellule (ligne de la cellule)</param>
+             <param name="owner">Numéro du joueur à qui appartient la cellule (0 si elle est vide)</param>
+             <param name="unitsCount">Nombre de soldats présents sur la cellule</param>
+            </member>
+        <member name="M:Influence.InfluenceCell.GetX">
+             <summary>
+             Permet d'accéder à la coordonnée x de la cellule
+             </summary>
+             <returns>La coordonnée x de la cellule courante</returns>
+            </member>
+        <member name="M:Influence.InfluenceCell.GetY">
+             <summary>
+             Permet d'accéder à la coordonnée y de la cellule
+             </summary>
+             <returns>La coordonnée y de la cellule courante</returns>
+            </member>
+        <member name="M:Influence.InfluenceCell.GetOwner">
+             <summary>
+             Permet d'accéder au propriétaire de la cellule
+             </summary>
+             <returns>Le numéro du joueur à qui appartient la cellule (0 si elle n'appartient à personne)</returns>
+            </member>
+        <member name="M:Influence.InfluenceCell.GetUnitsCount">
+             <summary>
+             Permet d'accéder au nombre d'unités sur la cellule
+             </summary>
+             <returns>Le nombre de soldats présents sur la cellule</returns>
+            </member>
+        <member name="T:Influence.InfluenceClient">
+             <summary>
+             Classe permettant de gérer toutes les interactions avec le serveur de jeu
+             </summary>
+            </member>
+        <member name="F:Influence.InfluenceClient.clientSocket">
+             <summary>
+             Socket client permettant de relier le serveur
+             </summary>
+            </member>
+        <member name="F:Influence.InfluenceClient.serverEP">
+             <summary>
+             Couple IP/port du serveur
+             </summary>
+            </member>
+        <member name="F:Influence.InfluenceClient.port">
+             <summary>
+             Port du serveur sur lequel le client doit se connecter (1337 par défaut)
+             </summary>
+            </member>
+        <member name="F:Influence.InfluenceClient.number">
+             <summary>
+             Numéro de l'équipe
+             </summary>
+            </member>
+        <member name="F:Influence.InfluenceClient.unitsToAdd">
+             <summary>
+             Nombre d'unités à placer au cours d'un tour
+             </summary>
+            </member>
+        <member name="T:Influence.InfluenceClient.Status">
+             <summary>
+             Enumération des statuts possibles de la partie
+             </summary>
+            </member>
+        <member name="F:Influence.InfluenceClient.instance">
+             <summary>
+             Champ statique représentant l'unique instance du client
+             </summary>
+            </member>
+        <member name="F:Influence.InfluenceClient.cellsToPower">
+             <summary>
+             Liste des cellules sur lesquelles on souhaite rajouter des unités
+             </summary>
+            </member>
+        <member name="F:Influence.InfluenceClient.field">
+             <summary>
+             Plateau de jeu sur lequel joue le client
+             </summary>
+            </member>
+        <member name="F:Influence.InfluenceClient.status">
+             <summary>
+             Statut de la partie (en cours, victoire, défaite...)
+             </summary>
+            </member>
+        <member name="M:Influence.InfluenceClient.#ctor">
+             <summary>
+             Constructeur privé du client
+             </summary>
+            </member>
+        <member name="M:Influence.InfluenceClient.GetInstance">
+             <summary>
+             Permet de récupérer l'instance unique du client
+             </summary>
+             <returns>Le client instancié pour la partie en cours</returns>
+            </member>
+        <member name="M:Influence.InfluenceClient.GetNumber">
+             <summary>
+             Permet d'accéder au numéro de l'équipe
+             </summary>
+             <returns>Le numéro de l'équipe qui a été attribué par le serveur</returns>
+            </member>
+        <member name="M:Influence.InfluenceClient.GetStatus">
+             <summary>
+             Permet d'accéder au statut de la partie
+             </summary>
+             <returns>Le statut de la partie : en cours, victoire ou défaite</returns>
+            </member>
+        <member name="M:Influence.InfluenceClient.Connect(System.String,System.String)">
+             <summary>
+             Permet de se connecteur au serveur de jeu
+             </summary>
+             <param name="ipAddress">Adresse IP du serveur</param>
+             <param name="teamName">Nom de l'équipe</param>
+            </member>
+        <member name="M:Influence.InfluenceClient.GetBytes(System.Int32,System.String)">
+             <summary>
+             Permet de créer un buffer à partir d'une chaîne de caractères
+             </summary>
+             <param name="bufferSize">Taille du buffer à remplir</param>
+             <param name="data">Chaîne à insérer dans le buffer</param>
+             <returns>Un buffer contenant la chaîne en paramètre et prêt à être envoyé au serveur</returns>
+            </member>
+        <member name="M:Influence.InfluenceClient.Attack(System.Int32,System.Int32,System.Int32,System.Int32)">
+             <summary>
+             Permet d'envoyer une attaque au serveur
+             </summary>
+             <param name="fromX">Coordonnée x de la cellule de départ de l'attaque</param>
+             <param name="fromY">Coordonnée y de la cellule de départ de l'attaque</param>
+             <param name="toX">Coordonnée x de la cellule attaquée</param>
+             <param name="toY">Coordonnée y de la cellule attaquée</param>
+             <returns>Le plateau de jeu après l'attaque</returns>
+            </member>
+        <member name="M:Influence.InfluenceClient.EndAttacks">
+             <summary>
+             Permet de terminer les attaques et de passer en mode rechargement des cellules
+             </summary>
+             <returns>Le nombre d'unités à placer sur vos cellules</returns>
+            </member>
+        <member name="M:Influence.InfluenceClient.RemainingUnits">
+             <summary>
+             Permet de connaître le nombre restant d'unités à placer au cours du tour
+             </summary>
+             <returns>Le nombre restant d'unités à placer</returns>
+            </member>
+        <member name="M:Influence.InfluenceClient.AddUnits(Influence.InfluenceCell,System.Int32)">
+             <summary>
+             Permet d'ajouter des unités à une cellule (phase de rechargement)
+             </summary>
+             <param name="c">La cellule à laquelle on souhaite ajouter des unités</param>
+             <param name="unitsCount">Le nombre d'unités à ajouter sur cette cellule (doit être supérieur à 0)</param>
+            </member>
+        <member name="M:Influence.InfluenceClient.AddUnitsList(System.Collections.Generic.List{Influence.InfluenceCell})">
+             <summary>
+             Permet d'ajouter 1 unité à toutes les cellules d'une liste
+             </summary>
+             <param name="lc">Liste contenant les cellules auxquelles on souhaite rajouter une unité</param>
+            </member>
+        <member name="M:Influence.InfluenceClient.EndAddingUnits">
+             <summary>
+             Permet d'envoyer la liste des cellules à recharger
+             </summary>
+             <returns>Le plateau à l'issue du rechargement</returns>
+            </member>
+        <member name="M:Influence.InfluenceClient.ReceiveField">
+             <summary>
+             Permet de récupérer le plateau de jeu envoyé par le serveur
+             </summary>
+             <returns>Le plateau de jeu contenant toutes les cellules</returns>
+            </member>
+        <member name="M:Influence.InfluenceClient.NextRound">
+             <summary>
+             Permet d'attendre le tour suivant : récupère le plateau de jeu et teste si l'on a gagné ou perdu
+             </summary>
+             <returns>Le plateau de jeu si la partie est encore en cours</returns>
+            </member>
+        <member name="M:Influence.InfluenceClient.HasWon">
+             <summary>
+             Permet de tester si l'on a gagné
+             </summary>
+             <returns>Vrai si l'on a gagné, faux sinon</returns>
+            </member>
+        <member name="M:Influence.InfluenceClient.HasLost">
+             <summary>
+             Permet de tester si l'on a perdu
+             </summary>
+             <returns>Vrai si l'on a perdu, faux sinon</returns>
+            </member>
+        <member name="M:Influence.InfluenceClient.GetMyCells">
+             <summary>
+             Permet de récupérer toutes les cellules appartenant à votre équipe
+             </summary>
+             <returns>Une liste de toutes les cellules qui vous appartiennent</returns>
+            </member>
+        <member name="M:Influence.InfluenceClient.CountOpponentCells">
+             <summary>
+             Permet de compter le nombre de cellules possédées par les adversaires
+             </summary>
+             <returns>Le nombre total de cellules possédées par les adversaires</returns>
+            </member>
+        <member name="M:Influence.InfluenceClient.Disconnect">
+             <summary>
+             Permet de déconnecter une équipe
+             </summary>
+            </member>
+        <member name="T:Influence.InfluenceField">
+             <summary>
+             Classe représentant le plateau de jeu
+             </summary>
+            </member>
+        <member name="F:Influence.InfluenceField.width">
+             <summary>
+             Largeur du plateau (nombre de colonnes)
+             </summary>
+            </member>
+        <member name="F:Influence.InfluenceField.height">
+             <summary>
+             Hauteur du plateau (nombre de lignes)
+             </summary>
+            </member>
+        <member name="F:Influence.InfluenceField.cells">
+             <summary>
+             Liste des cellules constituant le plateau
+             </summary>
+            </member>
+        <member name="M:Influence.InfluenceField.#ctor(System.Int32,System.Int32)">
+             <summary>
+             Constructeur du plateau du jeu
+             </summary>
+             <param name="width">Largeur du plateau (nombre de colonnes)</param>
+             <param name="height">Hauteur du plateau (nombre de lignes)</param>
+            </member>
+        <member name="M:Influence.InfluenceField.GetWidth">
+             <summary>
+             Permet d'accéder à la largeur du plateau
+             </summary>
+             <returns>La largeur du plateau</returns>
+            </member>
+        <member name="M:Influence.InfluenceField.GetHeight">
+             <summary>
+             Permet d'accéder à la hauteur du plateau
+             </summary>
+             <returns>La hauteur du plateau</returns>
+            </member>
+        <member name="M:Influence.InfluenceField.GetCells">
+             <summary>
+             Permet d'accéder aux cellules du plateau
+             </summary>
+             <returns>La liste des cellules du plateau</returns>
+            </member>
+        <member name="M:Influence.InfluenceField.GetCell(System.Int32,System.Int32)">
+             <summary>
+             Permet de récupérer une cellule en fonction de ses coordonnées (commencent en haut à gauche)
+             </summary>
+             <param name="x">Colonne de la cellule (commence à 0)</param>
+             <param name="y">Ligne de la cellule (commence à 0)</param>
+             <returns>La cellule située à la yième ligne et xième colonne sur le plateau de jeu ou null si elle n'existe pas</returns>
+            </member>
+    </members>
+</doc>
