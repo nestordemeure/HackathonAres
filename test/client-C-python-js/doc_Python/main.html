@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Python GI API Reference</title>
+
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/pgi.css" type="text/css" />
+
+    <style>
+
+    dd {
+        margin: 15px 0px 25px 20px !important;
+    }
+
+    </style>
+
+</head>
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    <section class="wy-nav-content-wrap">
+      <div class="wy-nav-content">
+        <div class="rst-content">
+
+           <div class="section">
+                <div class="document" id="documentation-du-client">
+<h1 class="title">Documentation du client</h1>
+<p>Le client est divisé en 3 classes. Vous utiliserez surtout la classe
+<tt class="docutils literal">Infl.Client</tt>.</p>
+<div class="section" id="les-propri-t-s">
+<h1>Les propriétés</h1>
+<p>Chaque classe contient une section <em>&quot;Properties&quot;</em>. Il y a deux manières d'utiliser
+les propriétés listées dans ces sections. Par exemple, si l'instance s'appelle
+<tt class="docutils literal">cell</tt>  et la propriété s'appelle <tt class="docutils literal">x</tt>, on peut soit utiliser les getters
+et les setters</p>
+<pre class="code python literal-block">
+<span class="name">v</span> <span class="operator">=</span> <span class="name">cell</span><span class="operator">.</span><span class="name">get_x</span><span class="punctuation">()</span>
+<span class="name">cell</span><span class="operator">.</span><span class="name">set_x</span><span class="punctuation">(</span><span class="literal number integer">42</span><span class="punctuation">)</span>
+</pre>
+<p>soit utiliser l'attribut spécial props</p>
+<pre class="code python literal-block">
+<span class="name">v</span> <span class="operator">=</span> <span class="name">cell</span><span class="operator">.</span><span class="name">props</span><span class="operator">.</span><span class="name">x</span>
+<span class="name">cell</span><span class="operator">.</span><span class="name">props</span><span class="operator">.</span><span class="name">x</span> <span class="operator">=</span> <span class="literal number integer">42</span>
+</pre>
+<p>attention, certaines propriétés ne sont pas accessibles en écriture. Si vous essayez
+de changer leur valeur, vous obtiendrez une erreur.</p>
+</div>
+</div>
+
+            </div>
+        </div>
+      </div>
+    </section>
+
+  </div> 
+
+</body>
+</html>

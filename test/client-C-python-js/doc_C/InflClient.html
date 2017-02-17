@@ -1,0 +1,772 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>InflClient: Influence Client Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.0">
+<link rel="home" href="index.html" title="Influence Client Reference Manual">
+<link rel="up" href="ch01.html" title="Documentation des classes">
+<link rel="prev" href="InflCell.html" title="InflCell">
+<link rel="next" href="InflField.html" title="InflField">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#InflClient.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#InflClient.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#InflClient.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="InflCell.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="InflField.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="InflClient"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="InflClient.top_of_page"></a>InflClient</span></h2>
+<p>InflClient — Le client du jeu</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="InflClient.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="InflClient.html" title="InflClient"><span class="returnvalue">InflClient</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="InflClient.html#infl-client-new" title="infl_client_new ()">infl_client_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="InflClient.html#infl-client-connect" title="infl_client_connect ()">infl_client_connect</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="InflClient.html#InflClientStatus" title="enum InflClientStatus"><span class="returnvalue">InflClientStatus</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="InflClient.html#infl-client-get-status" title="infl_client_get_status ()">infl_client_get_status</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="InflField.html" title="InflField"><span class="returnvalue">InflField</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="InflClient.html#infl-client-attack" title="infl_client_attack ()">infl_client_attack</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="InflClient.html#infl-client-end-attacks" title="infl_client_end_attacks ()">infl_client_end_attacks</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="InflClient.html#infl-client-add-units" title="infl_client_add_units ()">infl_client_add_units</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="InflClient.html#infl-client-add-unit-list" title="infl_client_add_unit_list ()">infl_client_add_unit_list</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="InflClient.html#infl-client-get-remaining-units" title="infl_client_get_remaining_units ()">infl_client_get_remaining_units</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="InflField.html" title="InflField"><span class="returnvalue">InflField</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="InflClient.html#infl-client-end-adding-units" title="infl_client_end_adding_units ()">infl_client_end_adding_units</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="InflField.html" title="InflField"><span class="returnvalue">InflField</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="InflClient.html#infl-client-get-map" title="infl_client_get_map ()">infl_client_get_map</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="InflField.html" title="InflField"><span class="returnvalue">InflField</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="InflClient.html#infl-client-next-round" title="infl_client_next_round ()">infl_client_next_round</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glibglib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="InflClient.html#infl-client-get-my-cells-arr" title="infl_client_get_my_cells_arr ()">infl_client_get_my_cells_arr</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="InflClient.html#infl-client-get-my-cells" title="infl_client_get_my_cells ()">infl_client_get_my_cells</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="InflClient.html#infl-client-get-number" title="infl_client_get_number ()">infl_client_get_number</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="InflClient.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></td>
+<td class="property_name"><a class="link" href="InflClient.html#InflClient--field" title="The “field” property">field</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gint"><span class="type">gint</span></a></td>
+<td class="property_name"><a class="link" href="InflClient.html#InflClient--number" title="The “number” property">number</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gint"><span class="type">gint</span></a></td>
+<td class="property_name"><a class="link" href="InflClient.html#InflClient--status" title="The “status” property">status</a></td>
+<td class="property_flags">Read</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="InflClient.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="InflClient.html#InflClientStatus" title="enum InflClientStatus">InflClientStatus</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="InflClient.html#INFL-TYPE-CLIENT:CAPS" title="INFL_TYPE_CLIENT">INFL_TYPE_CLIENT</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="InflClient.html#InflClient-struct" title="InflClient">InflClient</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="InflClient.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobjectgobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> InflClient
+</pre>
+</div>
+<div class="refsect1">
+<a name="InflClient.description"></a><h2>Description</h2>
+<p>La classe <a class="link" href="InflClient.html" title="InflClient"><span class="type">InflClient</span></a> est la classe la plus importante de cette bibliothèque.
+C'est cette classe qui permet de se connecter, d'attaquer, de placer ses
+unités et de passer au tour suivant. Une instance de <a class="link" href="InflClient.html" title="InflClient"><span class="type">InflClient</span></a> doit se
+libérer avec <a href="/usr/share/gtk-doc/html/gobjectgobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a> lorsqu'elle n'est plus nécessaire. Il est
+important de libérer les instances de cette classe puisque la déconnexion se
+fait lorsque la classe est libérée.</p>
+</div>
+<div class="refsect1">
+<a name="InflClient.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="infl-client-new"></a><h3>infl_client_new ()</h3>
+<pre class="programlisting"><a class="link" href="InflClient.html" title="InflClient"><span class="returnvalue">InflClient</span></a> *
+infl_client_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Crée un nouveau client. Il faut le détruire en appelant la fonction
+<code class="literal">g_object_unref(client)</code> lorsqu'il n'est plus utilisé.</p>
+<p><span class="annotation">[<acronym title="This symbol is a constructor, not a static method."><span class="acronym">constructor</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="infl-client-new.returns"></a><h4>Returns</h4>
+<p> Un nouveau client.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="infl-client-connect"></a><h3>infl_client_connect ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+infl_client_connect (<em class="parameter"><code><a class="link" href="InflClient.html" title="InflClient"><span class="type">InflClient</span></a> *client</code></em>,
+                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *address</code></em>,
+                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *team_name</code></em>);</pre>
+<p>Connecte un client au serveur passé en paramètre.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="infl-client-connect.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>Le client à connecter</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>address</p></td>
+<td class="parameter_description"><p>L'adresse du serveur sous la forme "serveur:port". Le port par
+défaur est 1337.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>team_name</p></td>
+<td class="parameter_description"><p>Le nom de l'équipe. Ce nom sera tronqué à 24 caractères.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="infl-client-connect.returns"></a><h4>Returns</h4>
+<p> vrai si la connection a réussi, faux sinon.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="infl-client-get-status"></a><h3>infl_client_get_status ()</h3>
+<pre class="programlisting"><a class="link" href="InflClient.html#InflClientStatus" title="enum InflClientStatus"><span class="returnvalue">InflClientStatus</span></a>
+infl_client_get_status (<em class="parameter"><code><a class="link" href="InflClient.html" title="InflClient"><span class="type">InflClient</span></a> *client</code></em>);</pre>
+<div class="refsect3">
+<a name="infl-client-get-status.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>Un client</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="infl-client-get-status.returns"></a><h4>Returns</h4>
+<p> L'état du client. Permet notamment de savoir si un client a gagné
+ou perdu.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="infl-client-attack"></a><h3>infl_client_attack ()</h3>
+<pre class="programlisting"><a class="link" href="InflField.html" title="InflField"><span class="returnvalue">InflField</span></a> *
+infl_client_attack (<em class="parameter"><code><a class="link" href="InflClient.html" title="InflClient"><span class="type">InflClient</span></a> *client</code></em>,
+                    <em class="parameter"><code><span class="type">int</span> origin_x</code></em>,
+                    <em class="parameter"><code><span class="type">int</span> origin_y</code></em>,
+                    <em class="parameter"><code><span class="type">int</span> x</code></em>,
+                    <em class="parameter"><code><span class="type">int</span> y</code></em>);</pre>
+<p>Envoie une attaque au serveur.</p>
+<div class="refsect3">
+<a name="infl-client-attack.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>Un client</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>origin_x</p></td>
+<td class="parameter_description"><p>Coordonnée x de la cellule d'origine de l'attaque</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>origin_y</p></td>
+<td class="parameter_description"><p>Coordonnée y de la cellule d'origine de l'attaque</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>x</p></td>
+<td class="parameter_description"><p>Coordonnée x de la cellule attaquée</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>y</p></td>
+<td class="parameter_description"><p>Coordonnée y de la cellule attaquée</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="infl-client-attack.returns"></a><h4>Returns</h4>
+<p> La carte de la partie après l'attaque. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="infl-client-end-attacks"></a><h3>infl_client_end_attacks ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+infl_client_end_attacks (<em class="parameter"><code><a class="link" href="InflClient.html" title="InflClient"><span class="type">InflClient</span></a> *client</code></em>);</pre>
+<p>Sort de la phase d'attaque et entre dans la phase de rechargement des 
+cellules.</p>
+<div class="refsect3">
+<a name="infl-client-end-attacks.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>Un client</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="infl-client-end-attacks.returns"></a><h4>Returns</h4>
+<p> Le nombre d'unités à placer sur vos cellules.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="infl-client-add-units"></a><h3>infl_client_add_units ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+infl_client_add_units (<em class="parameter"><code><a class="link" href="InflClient.html" title="InflClient"><span class="type">InflClient</span></a> *client</code></em>,
+                       <em class="parameter"><code><a class="link" href="InflCell.html" title="InflCell"><span class="type">InflCell</span></a> *c</code></em>,
+                       <em class="parameter"><code><span class="type">int</span> count</code></em>);</pre>
+<p>Ajoute des unités à une cellule. Cette méthode s'utilise uniquement pendant
+la phase de rechargement. La valeur de retour de <a class="link" href="InflClient.html#infl-client-end-attacks" title="infl_client_end_attacks ()"><code class="function">infl_client_end_attacks()</code></a>
+indique le nombre maximal d'unités disponibles pour le rechargement lors du
+tour.</p>
+<div class="refsect3">
+<a name="infl-client-add-units.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>Un client</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>c</p></td>
+<td class="parameter_description"><p>La cellules sur laquelle ajouter des unités</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>count</p></td>
+<td class="parameter_description"><p>Le nombre d'unités à ajouter</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="infl-client-add-unit-list"></a><h3>infl_client_add_unit_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+infl_client_add_unit_list (<em class="parameter"><code><a class="link" href="InflClient.html" title="InflClient"><span class="type">InflClient</span></a> *client</code></em>,
+                           <em class="parameter"><code><a class="link" href="InflCell.html" title="InflCell"><span class="type">InflCell</span></a> **units</code></em>,
+                           <em class="parameter"><code><span class="type">int</span> n</code></em>);</pre>
+<p>Ajoute une unité pour chaque cellule listée dans <em class="parameter"><code>units</code></em>
+. Cette méthode est
+soumise aux mêmes contraintes d'utilisations que <a class="link" href="InflClient.html#infl-client-add-units" title="infl_client_add_units ()"><code class="function">infl_client_add_units()</code></a>.</p>
+<div class="refsect3">
+<a name="infl-client-add-unit-list.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>Un client</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>units</p></td>
+<td class="parameter_description"><p> Un tableau de cellules. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n</p></td>
+<td class="parameter_description"><p>La taille du tableau de cellules</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="infl-client-get-remaining-units"></a><h3>infl_client_get_remaining_units ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+infl_client_get_remaining_units (<em class="parameter"><code><a class="link" href="InflClient.html" title="InflClient"><span class="type">InflClient</span></a> *client</code></em>);</pre>
+<div class="refsect3">
+<a name="infl-client-get-remaining-units.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>Un client</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="infl-client-get-remaining-units.returns"></a><h4>Returns</h4>
+<p> le nombre d'unités encore disponibles pour le rechargement.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="infl-client-end-adding-units"></a><h3>infl_client_end_adding_units ()</h3>
+<pre class="programlisting"><a class="link" href="InflField.html" title="InflField"><span class="returnvalue">InflField</span></a> *
+infl_client_end_adding_units (<em class="parameter"><code><a class="link" href="InflClient.html" title="InflClient"><span class="type">InflClient</span></a> *client</code></em>);</pre>
+<p>Envoie les cellules à recharger au serveur.</p>
+<div class="refsect3">
+<a name="infl-client-end-adding-units.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>Un client</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="infl-client-end-adding-units.returns"></a><h4>Returns</h4>
+<p> La carte après le rechargement. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="infl-client-get-map"></a><h3>infl_client_get_map ()</h3>
+<pre class="programlisting"><a class="link" href="InflField.html" title="InflField"><span class="returnvalue">InflField</span></a> *
+infl_client_get_map (<em class="parameter"><code><a class="link" href="InflClient.html" title="InflClient"><span class="type">InflClient</span></a> *client</code></em>);</pre>
+<p>Retourne la carte du jeu.</p>
+<div class="refsect3">
+<a name="infl-client-get-map.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>Un client</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="infl-client-get-map.returns"></a><h4>Returns</h4>
+<p> La carte du jeu. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="infl-client-next-round"></a><h3>infl_client_next_round ()</h3>
+<pre class="programlisting"><a class="link" href="InflField.html" title="InflField"><span class="returnvalue">InflField</span></a> *
+infl_client_next_round (<em class="parameter"><code><a class="link" href="InflClient.html" title="InflClient"><span class="type">InflClient</span></a> *client</code></em>);</pre>
+<p>Permet d'attendre le tour suivant. Vérifie si le client a gagné ou perdu.</p>
+<div class="refsect3">
+<a name="infl-client-next-round.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>In client</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="infl-client-next-round.returns"></a><h4>Returns</h4>
+<p> La carte du jeu au début du tour suivant. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="infl-client-get-my-cells-arr"></a><h3>infl_client_get_my_cells_arr ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glibglib-Pointer-Arrays.html#GPtrArray"><span class="returnvalue">GPtrArray</span></a> *
+infl_client_get_my_cells_arr (<em class="parameter"><code><a class="link" href="InflClient.html" title="InflClient"><span class="type">InflClient</span></a> *client</code></em>);</pre>
+<p>Agit comme <a class="link" href="InflClient.html#infl-client-get-my-cells" title="infl_client_get_my_cells ()"><code class="function">infl_client_get_my_cells()</code></a> mais retourne le résultat sous la forme
+d'un <code class="literal">GPtrArray</code>.</p>
+<p><span class="annotation">[<acronym title="Rename the original symbol's name to SYMBOL."><span class="acronym">rename-to</span></acronym> infl_client_get_my_cells]</span></p>
+<div class="refsect3">
+<a name="infl-client-get-my-cells-arr.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>Un client</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="infl-client-get-my-cells-arr.returns"></a><h4>Returns</h4>
+<p> Les cases appartenant
+au client. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> InflCell][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="infl-client-get-my-cells"></a><h3>infl_client_get_my_cells ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+infl_client_get_my_cells (<em class="parameter"><code><a class="link" href="InflClient.html" title="InflClient"><span class="type">InflClient</span></a> *client</code></em>,
+                          <em class="parameter"><code><a class="link" href="InflCell.html" title="InflCell"><span class="type">InflCell</span></a> ***cells</code></em>,
+                          <em class="parameter"><code><span class="type">int</span> *n</code></em>);</pre>
+<p>Permet de récupérer les cellules appartenant à votre équipe. La fonction
+s'occupe d'allouer la mémoire du tableau contenant ces cellules. Le tableau
+retourné par cette méthode doit être libéré avec <code class="function">free()</code>.</p>
+<p>Exemple d'utilisation:</p>
+<div class="informalexample"><pre class="programlisting">
+// On suppose qu'un client est disponible dans la variable 'client'
+
+InflClient **my_cells; // Un tableau de cellules
+int n_cells; // Contiendra la taille de my_cells
+
+infl_client_get_my_cells(client, &amp;my_cells, &amp;n_cells);
+
+// Traitement...
+
+free(my_cells) // on libère my_cells quand on en a plus besoin
+</pre></div>
+<p></p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="infl-client-get-my-cells.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>Un client</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cells</p></td>
+<td class="parameter_description"><p>Un pointeur vers un tableau de <code class="literal">InflCell *</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n</p></td>
+<td class="parameter_description"><p>Un pointeur qui stockera la taille du tableau.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="infl-client-get-number"></a><h3>infl_client_get_number ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+infl_client_get_number (<em class="parameter"><code><a class="link" href="InflClient.html" title="InflClient"><span class="type">InflClient</span></a> *client</code></em>);</pre>
+<div class="refsect3">
+<a name="infl-client-get-number.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>Un client.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="infl-client-get-number.returns"></a><h4>Returns</h4>
+<p> le numéro d'équipe du client.</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="InflClient.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="InflClientStatus"></a><h3>enum InflClientStatus</h3>
+<p>Cette énumération est utilisée par la méthode <a class="link" href="InflClient.html#infl-client-get-status" title="infl_client_get_status ()"><code class="function">infl_client_get_status()</code></a> pour
+indiquer le statut du client. Le serveur ne réagira pas si le statut est
+différent de <em class="parameter"><code>INFL_CLIENT_ONGOING</code></em>
+.</p>
+<div class="refsect3">
+<a name="InflClientStatus.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="INFL-CLIENT-CONNECTION-LOST:CAPS"></a>INFL_CLIENT_CONNECTION_LOST</p></td>
+<td class="enum_member_description">
+<p>Problème de réseau.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="INFL-CLIENT-ONGOING:CAPS"></a>INFL_CLIENT_ONGOING</p></td>
+<td class="enum_member_description">
+<p>Partie en cours.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="INFL-CLIENT-VICTORY:CAPS"></a>INFL_CLIENT_VICTORY</p></td>
+<td class="enum_member_description">
+<p>Victoire du client.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="INFL-CLIENT-DEFEAT:CAPS"></a>INFL_CLIENT_DEFEAT</p></td>
+<td class="enum_member_description">
+<p>Défaite du client.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="INFL-TYPE-CLIENT:CAPS"></a><h3>INFL_TYPE_CLIENT</h3>
+<pre class="programlisting">#define INFL_TYPE_CLIENT (infl_client_get_type())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="InflClient-struct"></a><h3>InflClient</h3>
+<pre class="programlisting">typedef struct _InflClient InflClient;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="InflClient.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="InflClient--field"></a><h3>The <code class="literal">“field”</code> property</h3>
+<pre class="programlisting">  “field”                    <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></pre>
+<p>La carte du jeu.</p>
+<p><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> InflField]</span></p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="InflClient--number"></a><h3>The <code class="literal">“number”</code> property</h3>
+<pre class="programlisting">  “number”                   <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gint"><span class="type">gint</span></a></pre>
+<p>Le numéro de l'équipe du client.</p>
+<p>Flags: Read</p>
+<p>Allowed values: [0,255]</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="InflClient--status"></a><h3>The <code class="literal">“status”</code> property</h3>
+<pre class="programlisting">  “status”                   <a href="/usr/share/gtk-doc/html/glibglib-Basic-Types.html#gint"><span class="type">gint</span></a></pre>
+<p>L'état du client.</p>
+<p><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> InflClientStatus]</span></p>
+<p>Flags: Read</p>
+<p>Allowed values: [0,255]</p>
+<p>Default value: 0</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.25</div>
+</body>
+</html>
