@@ -5,18 +5,17 @@ open Influence
 
 [<EntryPoint>]
 let main argv =
-   let f = id
    let r = new System.Random()
    let client = InfluenceClient.GetInstance()
    client.Connect("127.0.0.1", "les DauF#ins Surfeurs");
    let mutable field = client.NextRound()
+   let mutable myCells = client.GetMyCells()
 
    while client.GetStatus() = InfluenceClient.Status.ONGOING do
-
       printfn "%A - Attacking" DateTime.Now
       for i = 0 to 10 do
-         let myCells = client.GetMyCells()
-         let c = myCells.ElementAt(r.Next(myCells.Count))
+         myCells <- client.GetMyCells()
+         let c = myCells.[r.Next(myCells.Count)]
          if c.GetUnitsCount() >= 2 then 
             let dx = c.GetX() + r.Next(3) - 1
             let dy = c.GetY() + r.Next(3) - 1
@@ -28,7 +27,7 @@ let main argv =
       let unitsToAdd = client.EndAttacks()
       myCells <- client.GetMyCells()
       for i = 0 to unitsToAdd do
-         let c = myCells.ElementAt(r.Next(myCells.Count))
+         let c = myCells.[r.Next(myCells.Count)]
          client.AddUnits(c, 1)
          client.EndAddingUnits()
 
