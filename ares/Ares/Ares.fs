@@ -1,10 +1,11 @@
 module Ares
 
 open System
-open Influence
+open Influence 
 
 [<EntryPoint>]
 let main argv =
+   let f = id
    let r = new System.Random()
    let client = InfluenceClient.GetInstance()
    client.Connect("127.0.0.1", "les DauF#ins Surfeurs");
