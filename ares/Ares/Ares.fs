@@ -2,6 +2,8 @@ module Ares
 
 open System
 open Influence
+open Ares.Explo
+open Ares.Monte
 
 [<EntryPoint>]
 let main argv =
@@ -25,7 +27,7 @@ let main argv =
                let cellToAttack = field.GetCell(dx, dy)
                if (isNull cellToAttack |> not) && (cellToAttack.GetOwner() <> client.GetNumber()) then 
                   field <- client.Attack(cell.GetX(), cell.GetY(), cellToAttack.GetX(), cellToAttack.GetY())
-
+      printfn "out"
       let unitsToAdd = client.EndAttacks()
       myCells <- client.GetMyCells()
       for renfortNum = 1 to unitsToAdd do
@@ -38,6 +40,5 @@ let main argv =
       | InfluenceClient.Status.DEFEAT -> printfn "YOU LOST!"
       | InfluenceClient.Status.CONNECTION_LOST -> printfn "YOU LOST BECAUSE OF YOUR CONNECTION"
       | _ -> printfn "NOT REACHABLE"
-      System.Console.ReadKey() |> ignore
       field <- client.NextRound()
    0 // return an integer exit code
