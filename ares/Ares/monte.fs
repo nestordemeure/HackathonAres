@@ -15,8 +15,8 @@ let mutable adversecamp = []
 let reproduitField (field:InfluenceField) (client:InfluenceClient) x y =
    adversecamp <- []
    notrecamp <- []
-   for h = 0 to newField.Length do
-      for l = 0 to (newField.[0]).Length do
+   for h = 0 to newField.Length - 1 do
+      for l = 0 to (newField.[0]).Length - 1 do
          let cell = field.GetCell(x-rayon+h,y-rayon+l)
          if (isNull cell) then
             newField.[h].[l] <- System.Int32.MinValue
@@ -101,6 +101,7 @@ let division (a,b) x = (a/x,b/x)
 
 //-------------------------------------------------------------------------------------------------
 let monte x y (field:InfluenceField) (client:InfluenceClient) =
+   printfn "ATTACK"
    let stopWatch = System.Diagnostics.Stopwatch.StartNew()
 
    reproduitField field client x y
@@ -134,10 +135,10 @@ let monte x y (field:InfluenceField) (client:InfluenceClient) =
       coupsPasses.[indiceCoup] <- coupsPasses.[indiceCoup] + 1
       reproduitField field client x y
 
-   for i=0 to nbrCoups do
+   for i=0 to nbrCoups - 1 do
       if coupsPasses.[i] = 0 then
          scores.[i] <- (System.Int32.MinValue,System.Int32.MinValue)
       else
          scores.[i] <- division scores.[i] coupsPasses.[i]
-   Array.max scores
+   Array.max scores |> Some
 
