@@ -152,5 +152,8 @@ let monte x y (field:InfluenceField) (client:InfluenceClient) =
             maxY <- b
             indice <- i
 
-   coupsPossibles.[indice] |> Some
+   let xOld,yOld = coupsPossibles.[indice]
+   let xBonneBase = xOld + x
+   let yBonneBase = yOld + y
+   (xBonneBase,yBonneBase) |> Some
 
