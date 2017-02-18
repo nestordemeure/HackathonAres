@@ -125,7 +125,7 @@ let monte (stopwatch:System.Diagnostics.Stopwatch) x y (field:InfluenceField) (c
 
    let mutable coupN = -1
 
-   while stopWatch.Elapsed.TotalMilliseconds < temps do
+   while stopwatch.Elapsed.TotalMilliseconds < temps do
       coupN <- coupN + 1
       let indiceCoup = coupN%nbrCoups
       let coup = coupsPossibles.[indiceCoup]

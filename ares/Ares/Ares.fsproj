@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="explo.fs" />
     <Compile Include="monte.fs" />
+    <Compile Include="renforts.fs" />
     <Compile Include="Ares.fs" />
     <None Include="App.config" />
   </ItemGroup>

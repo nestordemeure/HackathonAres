@@ -6,7 +6,7 @@ let rng = new System.Random()
 let distanceDeSec = 2
 let valueNeutral = 1
 let valueUnique = 3
-let valueDistant = 1
+let valueDistant = 0
 let valueDangerousDistant = 1
 let winAgainstOne = 4
 

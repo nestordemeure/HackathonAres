@@ -133,7 +133,7 @@ let main argv =
                printfn "??? xy %d %d | x2y2 %d %d" x y x2 y2
                field <- client.Attack(x,y,x2,y2)
                attackNumber <- attackNumber + 1
-               if field.GetCell(x2,y2).GetOwner() = playerId then 
+               if (field.GetCell(x2,y2).GetOwner() = playerId) && (field.GetCell(x2,y2).GetUnitsCount() > 1) then 
                   fighters <- (x2,y2)::q
                   printfn "attack okay"
                else 
@@ -152,10 +152,7 @@ let main argv =
                   field <- client.Attack(cell.GetX(), cell.GetY(), cellToAttack.GetX(), cellToAttack.GetY())
       *)
       // renforts
-      let myCells = client.GetMyCells()
-      for renfortNum = 1 to unitsToAdd do
-         let cell = myCells.[rng.Next(myCells.Count)]
-         client.AddUnits(cell, 1)
+      renforce field client unitsToAdd
       field <- client.EndAddingUnits()
       // end-turn
       field <- client.NextRound()
