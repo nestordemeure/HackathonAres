@@ -5,7 +5,7 @@ open Ares.Explo
 
 let rayon = 2
 let profondeur = 2
-let temps = 3000.
+let temps = 4500.
 let newField = Array.init (2*rayon+1) (fun i -> Array.zeroCreate (2*rayon+1))
 let mutable notrecamp = []
 let mutable adversecamp = []
@@ -100,9 +100,8 @@ let somme (a,b) (x,y) = (a+x,b+y)
 let division (a,b) x = (a/x,b/x)
 
 //-------------------------------------------------------------------------------------------------
-let monte x y (field:InfluenceField) (client:InfluenceClient) =
+let monte (stopwatch:System.Diagnostics.Stopwatch) x y (field:InfluenceField) (client:InfluenceClient) =
    printfn "ATTACK"
-   let stopWatch = System.Diagnostics.Stopwatch.StartNew()
 
    reproduitField field client x y
 
@@ -153,7 +152,7 @@ let monte x y (field:InfluenceField) (client:InfluenceClient) =
             indice <- i
 
    let xOld,yOld = coupsPossibles.[indice]
-   let xBonneBase = xOld + x
-   let yBonneBase = yOld + y
+   let xBonneBase = xOld + x - rayon
+   let yBonneBase = yOld + y - rayon
    (xBonneBase,yBonneBase) |> Some
 

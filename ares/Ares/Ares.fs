@@ -120,20 +120,22 @@ let main argv =
                   scouts <- q
       // fighters
       stop <- false
+      let stopwatch = System.Diagnostics.Stopwatch.StartNew()
       while attackNumber < 20 && not stop do 
          match fighters with 
          | [] -> stop <- true
          | (x,y)::q -> 
-            match monte x y field client with 
+            match monte stopwatch x y field client with 
             | None -> 
                stop <- true // TODO : les attaquant DOIVENT attaquer
                fighters <- q 
             | Some (x2,y2) ->
-               //printfn "??? xy %d %d | x2y2 %d %d" x y x2 y2
+               printfn "??? xy %d %d | x2y2 %d %d" x y x2 y2
                field <- client.Attack(x,y,x2,y2)
                attackNumber <- attackNumber + 1
                if field.GetCell(x2,y2).GetOwner() = playerId then 
                   fighters <- (x2,y2)::q
+                  printfn "attack okay"
                else 
                   fighters <- q
       let unitsToAdd = client.EndAttacks()
