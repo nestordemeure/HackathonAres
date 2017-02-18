@@ -104,7 +104,6 @@ let main argv =
       let mutable attackNumber = 0
       let mutable stop = false
       // scouts 
-      stop <- false
       while attackNumber < 20 && not stop do 
          match scouts with 
          | [] -> stop <- true
@@ -120,6 +119,7 @@ let main argv =
                else 
                   scouts <- q
       // fighters
+      stop <- false
       while attackNumber < 20 && not stop do 
          match fighters with 
          | [] -> stop <- true
@@ -129,6 +129,7 @@ let main argv =
                stop <- true // TODO : les attaquant DOIVENT attaquer
                fighters <- q 
             | Some (x2,y2) ->
+               //printfn "??? %d %d" x2 y2
                field <- client.Attack(x,y,x2,y2)
                attackNumber <- attackNumber + 1
                if field.GetCell(x2,y2).GetOwner() = playerId then 
