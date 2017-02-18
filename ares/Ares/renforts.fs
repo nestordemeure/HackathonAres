@@ -97,3 +97,4 @@ let renforce (field:InfluenceField) (client:InfluenceClient) unitsToAdd =
             client.AddUnits(field.GetCell(x,y), 1)
             renfortNum <- renfortNum + 1
             fighters <- insertLast q (x,y)
+
