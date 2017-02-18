@@ -4,6 +4,7 @@ open System
 open Influence
 open Ares.Explo
 open Ares.Monte
+open Ares.Renforts
 
 /// the id for this 
 let mutable playerId = 0
