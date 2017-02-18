@@ -85,8 +85,8 @@ let renforce (field:InfluenceField) (client:InfluenceClient) unitsToAdd =
                match evaluate2 x y field with 
                | Fighter -> fighters <- (x,y)::fighters
                | Scout -> scouts <- (x,y)::scouts
-               | Dead -> printfn "+"
-      printfn "scouts : %A\nfighters : %A" scouts fighters
+               | Dead -> ()
+      //printfn "scouts : %A\nfighters : %A" scouts fighters
       let mutable renfortNum = 0
       let mutable stop = false
       let mutable renforceThis = true
@@ -97,17 +97,24 @@ let renforce (field:InfluenceField) (client:InfluenceClient) unitsToAdd =
                   match scouts with 
                   | [] -> stop <- true
                   | (x,y)::q ->
-                        client.AddUnits(field.GetCell(x,y), 1)
-                        renfortNum <- renfortNum + 1
-                        scouts <- insertLast q (x,y)
+                        if(field.GetCell(x,y).GetUnitsCount() < 20) then
+                              client.AddUnits(field.GetCell(x,y), 1)
+                              renfortNum <- renfortNum + 1
+                              scouts <- insertLast q (x,y)
+                        else
+                              scouts <- q
+
          | (x0,y0)::q0 ->
             while renfortNum < unitsToAdd && not stop do 
                match scouts with 
                | [] -> stop <- true
                | (x,y)::q ->
                      if renforceThis then 
-                        client.AddUnits(field.GetCell(x,y), 1)
-                        renfortNum <- renfortNum + 1
+                        if(field.GetCell(x,y).GetUnitsCount() < 20) then
+                              client.AddUnits(field.GetCell(x,y), 1)
+                              renfortNum <- renfortNum + 1
+                        else
+                              renforceThis <- not renforceThis
                      renforceThis <- not renforceThis
                      scouts <- q
       // fighters
@@ -116,6 +123,9 @@ let renforce (field:InfluenceField) (client:InfluenceClient) unitsToAdd =
          match fighters with 
          | [] -> stop <- true
          | (x,y)::q -> 
-            client.AddUnits(field.GetCell(x,y), 1)
-            renfortNum <- renfortNum + 1
-            fighters <- insertLast q (x,y)
+            if(field.GetCell(x,y).GetUnitsCount() < 20) then
+                  client.AddUnits(field.GetCell(x,y), 1)
+                  renfortNum <- renfortNum + 1
+                  fighters <- insertLast q (x,y)
+            else
+                  fighters <- q
