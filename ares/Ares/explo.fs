@@ -9,7 +9,7 @@ let rng = new System.Random()
 
 //-------------------------------------------------------------------------------------------------
 
-let explo x y (field:InfluenceField) (client:InfluenceClient) distanceDeSec =
+let explo x y (field:InfluenceField) (client:InfluenceClient) =
    let cell = field.GetCell(x, y)
    let dx = cell.GetX() + rng.Next(3) - 1
    let dy = cell.GetY() + rng.Next(3) - 1
