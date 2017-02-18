@@ -8,16 +8,18 @@ let valueNeutral = 1
 let valueUnique = 3
 let valueDistant = 1
 let valueDangerousDistant = 1
+let winAgainstOne = 4
 
 //-------------------------------------------------------------------------------------------------
 
 
 //-------------------------------------------------------------------------------------------------  
-let valueCell x y (field:InfluenceField) (client:InfluenceClient) =
+let valueCell x y (field:InfluenceField) (client:InfluenceClient) cellUnit =
    if field.GetCell(x, y).GetOwner() = client.GetNumber() then -1 
    else
       let mutable value = 0
-         (* let mutable value = if field.GetCell(x, y).GetUnitsCount() <> 0 then 1 else 0*)
+      if field.GetCell(x, y).GetUnitsCount() <> 0 then 
+         if cellUnit >= winAgainstOne then value <- 3
       for ix = max 0 (x-distanceDeSec) to min (x+distanceDeSec) (field.GetWidth()-1) do
          for iy = max 0 (y-distanceDeSec) to min (y+distanceDeSec) (field.GetHeight()-1) do
             if ix<>x || iy<>y then
@@ -50,10 +52,11 @@ let getVoisin x y (field:InfluenceField) =
 let explo x y (field:InfluenceField) (client:InfluenceClient) =
    let mutable bestCell = (0, 0)
    let mutable bestValue = -1
+   let cellUnit = field.GetCell(x, y).GetUnitsCount();
    for ix = max 0 (x-1) to min (x+1) (field.GetWidth()-1) do
       for iy = max 0 (y-1) to min (y+1) (field.GetHeight()-1) do
          if ix<>x || iy<>y then
-            let value = valueCell ix iy field client
+            let value = valueCell ix iy field client cellUnit
             if value > bestValue then
                bestValue <- value
                bestCell <- (ix, iy)
