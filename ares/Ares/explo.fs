@@ -21,7 +21,7 @@ let valueCell x y (field:InfluenceField) (client:InfluenceClient) =
       for ix = max 0 (x-distanceDeSec) to min (x+distanceDeSec) (field.GetWidth()-1) do
          for iy = max 0 (y-distanceDeSec) to min (y+distanceDeSec) (field.GetHeight()-1) do
             if ix<>x || iy<>y then
-                  let presentUnit = field.GetCell(x, y).GetUnitsCount()
+                  let presentUnit = field.GetCell(ix, iy).GetUnitsCount()
                   if presentUnit = 0 then
                      value <- value + valueNeutral
                   elif presentUnit = 1 then 
@@ -48,7 +48,7 @@ let explo x y (field:InfluenceField) (client:InfluenceClient) =
    let mutable bestCell = (0, 0)
    let mutable bestValue = -1
    for ix = max 0 (x-1) to min (x+1) (field.GetWidth()-1) do
-      for iy = (y-1) to min (y+1) (field.GetHeight()-1) do
+      for iy = max 0 (y-1) to min (y+1) (field.GetHeight()-1) do
          if ix<>x || iy<>y then
             let value = valueCell ix iy field client
             if value > bestValue then
