@@ -140,3 +140,4 @@ let monte x y (field:InfluenceField) (client:InfluenceClient) =
       else
          scores.[i] <- division scores.[i] coupsPasses.[i]
    Array.max scores
+
