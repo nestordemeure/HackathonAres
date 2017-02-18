@@ -6,10 +6,6 @@ open Ares.Explo
 open Ares.Monte
 open Ares.Renforts
 
-/// the id for this 
-let mutable playerId = 0
-let champDeVision = 2
-
 //-------------------------------------------------------------------------------------------------
 
 /// print a status
@@ -19,62 +15,6 @@ let printStatus (client:InfluenceClient) =
    | InfluenceClient.Status.DEFEAT -> printfn "YOU LOST!"
    | InfluenceClient.Status.CONNECTION_LOST -> printfn "YOU LOST BECAUSE OF YOUR CONNECTION"
    | _ -> printfn "NOT REACHABLE"
-
-/// put x at the end of the list
-let rec insertLast l x =
-   match l with 
-   | [] -> [x]
-   | t::q -> t::(insertLast q x)
-
-//-------------------------------------------------------------------------------------------------
-
-type CellType = Fighter | Scout | Dead
-
-let isEnemy (cell:InfluenceCell) = 
-   let owner = cell.GetOwner()
-   (owner <> 0) && (owner <> playerId) && (cell.GetUnitsCount() > 1)
-
-// forbid mine
-let voisins (field:InfluenceField) rayon x y =
-   seq {
-      for x2 = max 0 (x-rayon) to min (x+rayon) (field.GetWidth()-1) do 
-         for y2 = max 0 (y-rayon) to min (y+rayon) (field.GetHeight()-1) do 
-            if x<>x2 || y<>y2 then yield (x2,y2)
-   }
-
-let circle (field:InfluenceField) rayon x y =
-   seq {
-      if x-rayon >= 0 then 
-         let x2 = x-rayon
-         for y2 = max 0 (y-rayon) to min (y+rayon) (field.GetHeight()-1) do 
-            if x<>x2 || y<>y2 then yield (x2,y2)
-      if x+rayon < field.GetWidth() then 
-         let x2 = x+rayon
-         for y2 = max 0 (y-rayon) to min (y+rayon) (field.GetHeight()-1) do 
-            if x<>x2 || y<>y2 then yield (x2,y2)
-      if y-rayon >= 0 then 
-         let y2 = y-rayon
-         for x2 = max 0 (x-rayon) to min (x+rayon) (field.GetWidth()-1) do
-            if x<>x2 || y<>y2 then yield (x2,y2)
-      if y+rayon < field.GetHeight() then 
-         let y2 = y+rayon
-         for x2 = max 0 (x-rayon) to min (x+rayon) (field.GetWidth()-1) do
-            if x<>x2 || y<>y2 then yield (x2,y2)
-   }
-
-//-----
-
-let evaluate x y (field:InfluenceField) = 
-   let cell = field.GetCell(x,y)
-   let mutable result = Dead
-   if cell.GetUnitsCount() > 1 then
-      let voisinProches = circle field 1 x y 
-      if Seq.exists (fun (x2,y2) -> field.GetCell(x2,y2).GetOwner() <> playerId) voisinProches then
-         let voisinsRayon = voisins field champDeVision x y
-         if Seq.exists (fun (x2,y2) -> isEnemy <| field.GetCell(x2,y2)) voisinsRayon 
-         then result <- Fighter
-         else result <- Scout
-   result
 
 //-------------------------------------------------------------------------------------------------
 // MAIN
