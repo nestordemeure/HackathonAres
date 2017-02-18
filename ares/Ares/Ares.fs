@@ -4,6 +4,7 @@ open System
 open Influence
 open Ares.Explo
 open Ares.Monte
+open Ares.Renforts
 
 /// the id for this 
 let mutable playerId = 0
@@ -139,18 +140,6 @@ let main argv =
                else 
                   fighters <- q
       let unitsToAdd = client.EndAttacks()
-      (*
-      for attackNumber = 1 to 20 do
-         let myCells = client.GetMyCells()
-         let cell = myCells.[rng.Next(myCells.Count)]
-         if cell.GetUnitsCount() >= 2 then 
-            let dx = cell.GetX() + rng.Next(3) - 1
-            let dy = cell.GetY() + rng.Next(3) - 1
-            if dx >= 0 && dx < field.GetWidth() && dy >= 0 && dy < field.GetHeight() then 
-               let cellToAttack = field.GetCell(dx, dy)
-               if (isNull cellToAttack |> not) && (cellToAttack.GetOwner() <> playerId) then 
-                  field <- client.Attack(cell.GetX(), cell.GetY(), cellToAttack.GetX(), cellToAttack.GetY())
-      *)
       // renforts
       renforce field client unitsToAdd
       field <- client.EndAddingUnits()
