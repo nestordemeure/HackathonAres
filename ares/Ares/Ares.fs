@@ -31,7 +31,7 @@ type CellType = Fighter | Scout | Dead
 
 let isEnemy (cell:InfluenceCell) = 
    let owner = cell.GetOwner()
-   (owner <> 0) && (owner <> playerId)
+   (owner <> 0) && (owner <> playerId) && (cell.GetUnitsCount() > 1)
 
 // forbid mine
 let voisins (field:InfluenceField) rayon x y =
