@@ -33,6 +33,7 @@ let isEnemy (cell:InfluenceCell) =
    let owner = cell.GetOwner()
    (owner <> 0) && (owner <> playerId)
 
+// forbid mine
 let voisins (field:InfluenceField) rayon x y =
    seq {
       for x2 = max 0 (x-rayon) to min (x+rayon) (field.GetWidth()-1) do 
@@ -93,7 +94,7 @@ let main argv =
       for x = 0 to field.GetWidth() - 1 do 
          for y = 0 to field.GetHeight() - 1 do 
             let cell = field.GetCell(x,y)
-            if cell.GetOwner() <> playerId then 
+            if cell.GetOwner() = playerId then 
                match evaluate x y field with 
                | Fighter -> fighters <- (x,y)::fighters
                | Scout -> scouts <- (x,y)::scouts

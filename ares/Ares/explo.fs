@@ -7,7 +7,7 @@ let distanceDeSec = 2
 let valueNeutral = 1
 let valueUnique = 3
 let valueDistant = 1
-let valueDangerousDistant = -6
+let valueDangerousDistant = 1
 
 //-------------------------------------------------------------------------------------------------
 
@@ -21,7 +21,9 @@ let valueCell x y (field:InfluenceField) (client:InfluenceClient) =
       for ix = max 0 (x-distanceDeSec) to min (x+distanceDeSec) (field.GetWidth()-1) do
          for iy = max 0 (y-distanceDeSec) to min (y+distanceDeSec) (field.GetHeight()-1) do
             if ix<>x || iy<>y then
+               if field.GetCell(ix, iy).GetOwner() <> client.GetNumber() then
                   let presentUnit = field.GetCell(ix, iy).GetUnitsCount()
+                  //printfn "pres : %d xy(%d,%d) (%d,%d) owner:%d me:%d" presentUnit x y ix iy (field.GetCell(ix, iy).GetOwner()) (client.GetNumber())
                   if presentUnit = 0 then
                      value <- value + valueNeutral
                   elif presentUnit = 1 then 
@@ -29,9 +31,10 @@ let valueCell x y (field:InfluenceField) (client:InfluenceClient) =
                   elif (presentUnit - max (abs (ix - x)) (abs (iy - y))) < 0 then
                      value <- value + valueDistant
                   elif max (abs (ix - x)) (abs (iy - y)) = 2 then
-                     value <- valueDangerousDistant
+                     value <- value + valueDangerousDistant
                   else
-                     value <- -1000
+                     value <- value - 1000
+      //printfn "value : %d" value
       value
 
 let getVoisin x y (field:InfluenceField) =
