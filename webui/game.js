@@ -48,24 +48,34 @@ function nextEvent() {
   } else {
     switch(event.type) {
       case "attack":
-        attack(event.data, function() {
-        })
+        if(event.data) {
+          attack(event.data, function() {
+          })
+        }
         nextEvent();
         break;
       case "initplacement":
-        initPlacement(event.data.x, event.data.y, event.data.player.ID);
+        if(event.data) {
+          initPlacement(event.data);
+        }
         nextEvent();
         break;
       case "placement":
-        placement(event.data);
+        if(event.data) {
+          placement(event.data);
+        }
         nextEvent();
         break;
       case "log":
-        addLog(event.data);
+        if(event.data) {
+          addLog(event.data);
+        }
         nextEvent();
         break;
       case "field":
-        updateBoard(event.data.sizeX, event.data.sizeX, event.data.cells);
+        if(event.data) {
+          updateBoard(event.data.sizeX, event.data.sizeX, event.data.cells);
+        }
         nextEvent();
         break;
       default:
@@ -140,11 +150,11 @@ function setCurrentTeam(id) {
   $('#team-'+id).css('border-width', '2px');
 }
 
-function initPlacement(x, y, playerID) {
-  var htmlCell = getCell(x, y);
-  htmlCell.data('owner', playerID);
-  htmlCell.css('background-color', Config.teamColors[playerID]);
-  htmlCell.setPop(1);
+function initPlacement(placement) {
+  var htmlCell = getCell(placement.x, placement.y);
+  htmlCell.data('owner', placement.player.ID);
+  htmlCell.css('background-color', Config.teamColors[placement.player.ID]);
+  htmlCell.setPop(placement.pop);
 }
 
 function shake(x, y, callback) {
