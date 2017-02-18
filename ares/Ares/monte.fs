@@ -135,10 +135,22 @@ let monte x y (field:InfluenceField) (client:InfluenceClient) =
       coupsPasses.[indiceCoup] <- coupsPasses.[indiceCoup] + 1
       reproduitField field client x y
 
+   let mutable maxX,maxY = (0,0)
+   let mutable indice = 0
    for i=0 to nbrCoups - 1 do
       if coupsPasses.[i] = 0 then
          scores.[i] <- (System.Int32.MinValue,System.Int32.MinValue)
       else
          scores.[i] <- division scores.[i] coupsPasses.[i]
-   Array.max scores |> Some
+         let a,b = scores.[i]
+         if a > maxX then
+            maxX <- a
+            maxY <- b
+            indice <- i
+         elif a = maxX && b > maxY then
+            maxX <- a
+            maxY <- b
+            indice <- i
+
+   coupsPossibles.[indice] |> Some
 
