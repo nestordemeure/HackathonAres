@@ -122,36 +122,30 @@ let main argv =
       // fighters
       stop <- false
       let stopwatch = System.Diagnostics.Stopwatch.StartNew()
+      let mutable listSize = List.length fighters |> float
+      let mutable timeLeft = 4500.
       while attackNumber < 20 && not stop do 
          match fighters with 
          | [] -> stop <- true
          | (x,y)::q -> 
-            match monte stopwatch x y field client with 
+            let temps = timeLeft / listSize
+            stopwatch.Restart()
+            match monte stopwatch temps x y field client with 
             | None -> 
                stop <- true // TODO : les attaquant DOIVENT attaquer
                fighters <- q 
             | Some (x2,y2) ->
-               printfn "??? xy %d %d | x2y2 %d %d" x y x2 y2
+               //printfn "??? xy %d %d | x2y2 %d %d" x y x2 y2
                field <- client.Attack(x,y,x2,y2)
                attackNumber <- attackNumber + 1
                if (field.GetCell(x2,y2).GetOwner() = playerId) && (field.GetCell(x2,y2).GetUnitsCount() > 1) then 
+                  listSize <- listSize + 1.
                   fighters <- (x2,y2)::q
-                  printfn "attack okay"
+                  //printfn "attack okay"
                else 
                   fighters <- q
+            timeLeft <- timeLeft - stopwatch.Elapsed.TotalMilliseconds
       let unitsToAdd = client.EndAttacks()
-      (*
-      for attackNumber = 1 to 20 do
-         let myCells = client.GetMyCells()
-         let cell = myCells.[rng.Next(myCells.Count)]
-         if cell.GetUnitsCount() >= 2 then 
-            let dx = cell.GetX() + rng.Next(3) - 1
-            let dy = cell.GetY() + rng.Next(3) - 1
-            if dx >= 0 && dx < field.GetWidth() && dy >= 0 && dy < field.GetHeight() then 
-               let cellToAttack = field.GetCell(dx, dy)
-               if (isNull cellToAttack |> not) && (cellToAttack.GetOwner() <> playerId) then 
-                  field <- client.Attack(cell.GetX(), cell.GetY(), cellToAttack.GetX(), cellToAttack.GetY())
-      *)
       // renforts
       renforce field client unitsToAdd
       field <- client.EndAddingUnits()
