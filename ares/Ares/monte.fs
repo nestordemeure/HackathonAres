@@ -5,7 +5,7 @@ open Ares.Explo
 
 let rayon = 2
 let profondeur = 2
-let temps = 4500.
+
 let newField = Array.init (2*rayon+1) (fun i -> Array.zeroCreate (2*rayon+1))
 let mutable notrecamp = []
 let mutable adversecamp = []
@@ -100,7 +100,7 @@ let somme (a,b) (x,y) = (a+x,b+y)
 let division (a,b) x = (a/x,b/x)
 
 //-------------------------------------------------------------------------------------------------
-let monte (stopwatch:System.Diagnostics.Stopwatch) x y (field:InfluenceField) (client:InfluenceClient) =
+let monte (stopwatch:System.Diagnostics.Stopwatch) temps x y (field:InfluenceField) (client:InfluenceClient) =
    printfn "ATTACK"
 
    reproduitField field client x y
@@ -120,39 +120,40 @@ let monte (stopwatch:System.Diagnostics.Stopwatch) x y (field:InfluenceField) (c
                         yield(coupX, coupY)
       |]
    let nbrCoups = coupsPossibles.Length
-   let mutable scores = Array.create nbrCoups (0,0)
-   let mutable coupsPasses = Array.zeroCreate nbrCoups
+   if nbrCoups = 0 then None else
+      let mutable scores = Array.create nbrCoups (0,0)
+      let mutable coupsPasses = Array.zeroCreate nbrCoups
 
-   let mutable coupN = -1
+      let mutable coupN = -1
 
-   while stopwatch.Elapsed.TotalMilliseconds < temps do
-      coupN <- coupN + 1
-      let indiceCoup = coupN%nbrCoups
-      let coup = coupsPossibles.[indiceCoup]
-      let score = simulePartie newX newY coup profondeur
-      scores.[indiceCoup] <- somme score scores.[indiceCoup]
-      coupsPasses.[indiceCoup] <- coupsPasses.[indiceCoup] + 1
-      reproduitField field client x y
+      while stopwatch.Elapsed.TotalMilliseconds < temps do
+         coupN <- coupN + 1
+         let indiceCoup = coupN%nbrCoups
+         let coup = coupsPossibles.[indiceCoup]
+         let score = simulePartie newX newY coup profondeur
+         scores.[indiceCoup] <- somme score scores.[indiceCoup]
+         coupsPasses.[indiceCoup] <- coupsPasses.[indiceCoup] + 1
+         reproduitField field client x y
 
-   let mutable maxX,maxY = (0,0)
-   let mutable indice = 0
-   for i=0 to nbrCoups - 1 do
-      if coupsPasses.[i] = 0 then
-         scores.[i] <- (System.Int32.MinValue,System.Int32.MinValue)
-      else
-         scores.[i] <- division scores.[i] coupsPasses.[i]
-         let a,b = scores.[i]
-         if a > maxX then
-            maxX <- a
-            maxY <- b
-            indice <- i
-         elif a = maxX && b > maxY then
-            maxX <- a
-            maxY <- b
-            indice <- i
+      let mutable maxX,maxY = (0,0)
+      let mutable indice = 0
+      for i=0 to nbrCoups - 1 do
+         if coupsPasses.[i] = 0 then
+            scores.[i] <- (System.Int32.MinValue,System.Int32.MinValue)
+         else
+            scores.[i] <- division scores.[i] coupsPasses.[i]
+            let a,b = scores.[i]
+            if a > maxX then
+               maxX <- a
+               maxY <- b
+               indice <- i
+            elif a = maxX && b > maxY then
+               maxX <- a
+               maxY <- b
+               indice <- i
 
-   let xOld,yOld = coupsPossibles.[indice]
-   let xBonneBase = xOld + x - rayon
-   let yBonneBase = yOld + y - rayon
-   (xBonneBase,yBonneBase) |> Some
+      let xOld,yOld = coupsPossibles.[indice]
+      let xBonneBase = xOld + x - rayon
+      let yBonneBase = yOld + y - rayon
+      (xBonneBase,yBonneBase) |> Some
 

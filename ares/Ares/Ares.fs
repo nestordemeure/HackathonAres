@@ -122,11 +122,15 @@ let main argv =
       // fighters
       stop <- false
       let stopwatch = System.Diagnostics.Stopwatch.StartNew()
+      let mutable listSize = List.length fighters |> float
+      let mutable timeLeft = 4500.
       while attackNumber < 20 && not stop do 
          match fighters with 
          | [] -> stop <- true
          | (x,y)::q -> 
-            match monte stopwatch x y field client with 
+            let temps = timeLeft / listSize
+            stopwatch.Restart()
+            match monte stopwatch temps x y field client with 
             | None -> 
                stop <- true // TODO : les attaquant DOIVENT attaquer
                fighters <- q 
@@ -135,10 +139,12 @@ let main argv =
                field <- client.Attack(x,y,x2,y2)
                attackNumber <- attackNumber + 1
                if (field.GetCell(x2,y2).GetOwner() = playerId) && (field.GetCell(x2,y2).GetUnitsCount() > 1) then 
+                  listSize <- listSize + 1.
                   fighters <- (x2,y2)::q
                   printfn "attack okay"
                else 
                   fighters <- q
+            timeLeft <- timeLeft - stopwatch.Elapsed.TotalMilliseconds
       let unitsToAdd = client.EndAttacks()
       // renforts
       renforce field client unitsToAdd
