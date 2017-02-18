@@ -1,4 +1,4 @@
-module Ares
+module Ares.Main
 
 open System
 open Influence
