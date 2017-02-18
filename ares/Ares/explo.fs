@@ -81,6 +81,7 @@ let valueCell2 x y (field:InfluenceField) (client:InfluenceClient) =
                      value <- -1000
       value
 
+<<<<<<< HEAD
 let explo2 x y (field:InfluenceField) (client:InfluenceClient) =
    let mutable bestCell = (0, 0)
    let mutable bestValue = -1
@@ -92,3 +93,15 @@ let explo2 x y (field:InfluenceField) (client:InfluenceClient) =
                bestValue <- value
                bestCell <- (ix, iy)
    if bestValue > -1 then Some bestCell else None
+=======
+let explo x y (field:InfluenceField) (client:InfluenceClient) =
+   let cell = field.GetCell(x, y)
+   let dx = cell.GetX() + rng.Next(3) - 1
+   let dy = cell.GetY() + rng.Next(3) - 1
+   if dx >= 0 && dx < field.GetWidth() && dy >= 0 && dy < field.GetHeight() then 
+      let cellToAttack = field.GetCell(dx, dy)
+      if (isNull cellToAttack |> not) && (cellToAttack.GetOwner() <> client.GetNumber()) then 
+         Some (dx,dy)
+      else None
+   else None
+>>>>>>> 795541d81ad7698676b0bbedea8c03c0848734e4
