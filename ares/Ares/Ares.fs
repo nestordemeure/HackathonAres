@@ -129,7 +129,7 @@ let main argv =
                stop <- true // TODO : les attaquant DOIVENT attaquer
                fighters <- q 
             | Some (x2,y2) ->
-               //printfn "??? %d %d" x2 y2
+               printfn "??? xy %d %d | x2y2 %d %d" x y x2 y2
                field <- client.Attack(x,y,x2,y2)
                attackNumber <- attackNumber + 1
                if field.GetCell(x2,y2).GetOwner() = playerId then 
