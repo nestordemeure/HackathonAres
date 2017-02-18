@@ -19,7 +19,7 @@ let valueCell x y (field:InfluenceField) (client:InfluenceClient) cellUnit =
    else
       let mutable value = 0
       if field.GetCell(x, y).GetUnitsCount() <> 0 then 
-         if cellUnit >= winAgainstOne then value <- 3
+         if cellUnit >= winAgainstOne then value <- valueUnique
       for ix = max 0 (x-distanceDeSec) to min (x+distanceDeSec) (field.GetWidth()-1) do
          for iy = max 0 (y-distanceDeSec) to min (y+distanceDeSec) (field.GetHeight()-1) do
             if ix<>x || iy<>y then
